@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block articlelistpage %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            {% for article in articles %}
+
+            <div class="card m-4 border-0 shadow-sm">
+                <div class="card-body">
+                            
+                    <div class="d-flex justify-content-start p-2">
+                        <img src="{{article.cover_image.url}}" class="img-thumbnail" alt="..."style="width:30%;height:auto;">
+                        <div class="p-2"></div>
+                        <h1 class="display-6"><a href="/article/detail/{{article.id}}/"> {{article.title}} </a></h1>
+                    </div>
+
+                    
+                </div>
+            </div>
+
+            {% endfor %}          
+        </div>
+        <div class="col-md-2">  </div>
+
+    </div>
+</div>
+{% endblock %}
